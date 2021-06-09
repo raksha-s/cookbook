@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".DetailActivity">
 
     <ImageView
@@ -14,23 +15,64 @@
         android:src="@drawable/dosa"
         android:scaleType="centerCrop"
         />
-
-    <ScrollView
+    <TextView
+        android:id="@+id/tvtitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="TITLE"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        />
 
-        <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:padding="30dp"
-            android:text="Description"
-            android:textSize="16sp"
-            android:id="@+id/txtDescription"
+            android:layout_height="wrap_content"
+            android:minHeight="250dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="30dp"
+                android:text="Description"
+                android:textSize="16sp"
+                android:id="@+id/txtDescription"
+                />
+
+        </ScrollView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="30dp"
+        android:gravity="center_horizontal"
+        android:layout_marginVertical="10dp">
+
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="Delete"
             />
 
-    </ScrollView>
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="Edit"
+            />
 
-
-
+    </LinearLayout>
 </LinearLayout>

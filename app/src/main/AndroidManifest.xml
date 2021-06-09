@@ -9,10 +9,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CookBook"
-
-       >
-        <activity android:name=".AddRecipe"></activity>
+        android:theme="@style/Theme.CookBook">
+        <activity android:name=".UpdateRecipe"></activity>
+        <activity android:name=".AddRecipe" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

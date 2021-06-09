@@ -80,5 +80,35 @@ public class DBHandler extends SQLiteOpenHelper {
 
         return retlist;
     }
+    public boolean removeFood(FoodModel f){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String qs = "DELETE FROM RECIPE WHERE ID = " +  f.getId();
 
+        Cursor cursor = db.rawQuery(qs, null);
+        if(cursor.moveToFirst()){
+            cursor.close();
+            db.close();
+            return false;
+        }else{
+            cursor.close();
+            db.close();
+            return true;
+        }
+    }
+
+    public boolean updateDish(FoodModel f){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String qs = "UPDATE RECIPE SET DISH_NAME = \"" + f.getDish_name() + "\", DISH_DESC = \"" + f.getDish_desc() + "\", IMAGE = '" + f.getImage() +"' WHERE ID = " + f.getId();
+
+        Cursor cursor = db.rawQuery(qs, null);
+        if(cursor.moveToFirst()){
+            cursor.close();
+            db.close();
+            return false;
+        }else{
+            cursor.close();
+            db.close();
+            return true;
+        }
+    }
 }
